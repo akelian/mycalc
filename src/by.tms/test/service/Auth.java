@@ -1,7 +1,5 @@
 package by.tms.test.service;
 
-import by.tms.test.entity.User;
-import by.tms.test.entity.UserBD;
 import by.tms.test.util.ReaderImpl;
 
 public class Auth {
