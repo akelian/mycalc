@@ -1,11 +1,7 @@
 package by.tms.test.util;
 
-import by.tms.test.entity.History;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class WriterImpl {
@@ -13,7 +9,7 @@ public class WriterImpl {
 
     public static void outputFromFile(String filename) {
         try {
-            FileReader fileReader = new FileReader("logs.txt");
+            FileReader fileReader = new FileReader(filename);
             Scanner scan = new Scanner(fileReader);
 
             while (scan.hasNextLine()){
