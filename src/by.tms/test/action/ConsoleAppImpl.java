@@ -19,6 +19,6 @@ public class ConsoleAppImpl {
             Calc calculator = new CalcImpl(кастыль, reader.inputNum(), reader.inputNum());
             WriterImpl.output(calculator.calc());
         } while (true);
-        History.showLogs();
+//        History.showLogs();
     }
 }
