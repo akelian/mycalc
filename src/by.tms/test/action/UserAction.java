@@ -1,4 +1,6 @@
 package by.tms.test.action;
 
-public class UserAction {
+public class UserAction{
+
+
 }

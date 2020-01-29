@@ -1,55 +1,43 @@
 package by.tms.test.entity;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String login;
-    private String name;
-    private String lastname;
     private String password;
     private static int userCounter = 0;
-    private final static String DEFAULTPASS = "Pa$$w0rd";
-    private final static String DEFAULTNAME = "Олег";
-    private final static String DEFAULTLNAME = "Костюмович";
 
-//    public final List<User> bd = new ArrayList<>();
 
-    public User(String name, String password) {
-        userCounter++;
-        this.name = name;
+
+//    public User(){
+//        userCounter++;
+//    }
+    public User(String login, String password){
+        this.login = login;
         this.password = password;
-    }
-
-    public User(){
         userCounter++;
     }
 
-    public void setName(String name) {
-        if(name == null){this.name = DEFAULTNAME;}
-        this.name = name;
-    }
-
-    public void setLastname(String lastname) {
-        if(lastname == null){this.lastname = DEFAULTLNAME;}
-        this.lastname = lastname;
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     public void setLogNameName(String logName) {
-        if(logName == null){this.login = "User" + userCounter;}
         this.login = logName;
     }
     public void setPassword(String password) {
-        if(password == null){this.password = DEFAULTPASS;}
         this.password = password;
     }
 
+    public static int getUserCounter() {return userCounter;}
     public String getLogin() {
         return login;
     }
-    public String getName() {
-        return name;
-    }
-    public String getLastname() {
-        return lastname;
-    }
+
     public String getPassword() {
         return password;
     }
