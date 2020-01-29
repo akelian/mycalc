@@ -26,7 +26,7 @@ public class User implements Serializable {
                 '}';
     }
 
-    public void setLogNameName(String logName) {
+    public void setLogName(String logName) {
         this.login = logName;
     }
     public void setPassword(String password) {
