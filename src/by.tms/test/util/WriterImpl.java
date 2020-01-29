@@ -11,7 +11,6 @@ public class WriterImpl {
         try {
             FileReader fileReader = new FileReader(filename);
             Scanner scan = new Scanner(fileReader);
-
             while (scan.hasNextLine()){
                 System.out.println(scan.nextLine());
             }
