@@ -1,8 +1,12 @@
 package by.tms.test.action;
 
+import by.tms.test.service.Auth;
+import by.tms.test.service.Reg;
 import by.tms.test.util.MyReader;
 import by.tms.test.util.ReaderImpl;
 import by.tms.test.util.WriterImpl;
+
+import java.util.Scanner;
 
 public class ConsoleAppImpl {
 
@@ -10,13 +14,14 @@ public class ConsoleAppImpl {
         MyReader reader = new ReaderImpl();
         System.out.println("1 for auth, 2 for reg, 3 for exit");
         boolean check = true;
+        Scanner scanner = new Scanner(System.in);
         while(check){
-            switch ((int) reader.inputNum()){
+            switch (scanner.nextInt()/*(int) reader.inputNum()*/){
                 case 1:
-                    System.out.println("will be soon");
+                    Auth.auth();
                     break;
                 case 2:
-
+                    Reg.newUser();
                     break;
                 case 3:
                     WriterImpl.outputBad();

@@ -10,34 +10,38 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Reg {
-    static List<User> bd = new ArrayList<>();
+    private static List<User> bd = new ArrayList<>();
     public static void newUser() {
         String login = "User"+ User.getUserCounter();
         String pass = "1111";
-        Scanner sc = new Scanner(System.in);
+
+
         for (int i = 0; i <= 1; i++) {
             switch (i){
                 case 0:
-                    System.out.print("Enter login");
-                    login = sc.next();
+                    System.out.println("Enter login");
+                    //сделать условие
+                    Scanner sc = new Scanner(System.in);
+                    login = sc.nextLine();
 //                        fileWriter.append(" Login: " + sc.nextLine()+ ", ");
+                    sc.close();
                     break;
                 case 1:
-                    System.out.print("Enter password");
-                    pass = sc.next();
+                    System.out.println("Enter password");
+                    //сделать условие
+                    Scanner sc2 = new Scanner(System.in);
+                    pass = sc2.nextLine();
 //                        fileWriter.append("Password: " + sc.nextLine() + ";\n");
-                    sc.close();
+                    sc2.close();
                     break;
             }
         }
         bd.add(new User(login, pass));
         try {
 //            FileWriter fileWriter = new FileWriter("UserBD.txt",true);
-            FileOutputStream fos = new FileOutputStream("UserBD.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("UserBD.txt"));
             oos.writeObject(bd);
             oos.close();
-            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

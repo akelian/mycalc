@@ -7,8 +7,6 @@ public class User implements Serializable {
     private String password;
     private static int userCounter = 0;
 
-
-
 //    public User(){
 //        userCounter++;
 //    }
