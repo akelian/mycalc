@@ -12,30 +12,34 @@ import java.util.Scanner;
 public class Reg {
     private static List<User> bd = new ArrayList<>();
     public static void newUser() {
-        String login = "User"+ User.getUserCounter();
-        String pass = "1111";
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter login");
+        String login = sc.nextLine();
+        System.out.println("Enter pass");
+        String pass = sc.nextLine();
+        sc.close();
 
-        for (int i = 0; i <= 1; i++) {
-            switch (i){
-                case 0:
-                    System.out.println("Enter login");
-                    //сделать условие
-                    Scanner sc = new Scanner(System.in);
-                    login = sc.nextLine();
-//                        fileWriter.append(" Login: " + sc.nextLine()+ ", ");
-                    sc.close();
-                    break;
-                case 1:
-                    System.out.println("Enter password");
-                    //сделать условие
-                    Scanner sc2 = new Scanner(System.in);
-                    pass = sc2.nextLine();
-//                        fileWriter.append("Password: " + sc.nextLine() + ";\n");
-                    sc2.close();
-                    break;
-            }
-        }
+//        for (int i = 0; i <= 1; i++) {
+//            switch (i){
+//                case 0:
+//                    System.out.println("Enter login");
+//                    //сделать условие
+//                    Scanner sc = new Scanner(System.in);
+//                    login = sc.nextLine();
+////                        fileWriter.append(" Login: " + sc.nextLine()+ ", ");
+//                    sc.close();
+//                    break;
+//                case 1:
+//                    System.out.println("Enter password");
+//                    //сделать условие
+//                    Scanner sc2 = new Scanner(System.in);
+//                    pass = sc2.nextLine();
+////                        fileWriter.append("Password: " + sc.nextLine() + ";\n");
+//                    sc2.close();
+//                    break;
+//            }
+//        }
         bd.add(new User(login, pass));
         try {
 //            FileWriter fileWriter = new FileWriter("UserBD.txt",true);

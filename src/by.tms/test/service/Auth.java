@@ -14,10 +14,10 @@ public class Auth {
     public static void auth(){
         System.out.println("Enter Login");
         Scanner login = new Scanner(System.in);
-        login.hasNextLine();
+        login.nextLine();
         System.out.println("Enter Password");
         Scanner pass = new Scanner(System.in);
-        pass.hasNextLine();
+        pass.nextLine();
 
         ArrayList<User> users;
 
