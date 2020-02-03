@@ -34,6 +34,7 @@ public class ConsoleAppImpl {
     }
 
     public void summoningDaCalc(){
+        System.out.println("Input operator, then two values");
         Calc calculator = new CalcImpl(reader.inputOp(), reader.inputNum(),
                 reader.inputNum());
         WriterImpl.output(calculator.calc());
