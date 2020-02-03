@@ -18,7 +18,7 @@ public class Reg {
         String login = sc.nextLine();
         System.out.println("Enter pass");
         String pass = sc.nextLine();
-        sc.close();
+
 
 //        for (int i = 0; i <= 1; i++) {
 //            switch (i){
