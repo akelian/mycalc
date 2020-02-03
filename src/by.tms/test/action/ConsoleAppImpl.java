@@ -10,25 +10,26 @@ import java.util.Scanner;
 
 public class ConsoleAppImpl {
 
-    public static void launch() {
+    public void launch() {
         MyReader reader = new ReaderImpl();
         System.out.println("1 for auth, 2 for reg, 3 for exit");
         boolean check = true;
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         while(check){
-            switch (scanner.nextInt()/*(int) reader.inputNum()*/){
-                case 1:
+            switch (reader.input()/*(int) reader.inputNum()*/){
+                case "1":
                     Auth.auth();
-                    break;
-                case 2:
+                    continue;
+                case "2":
                     Reg.newUser();
-                    break;
-                case 3:
+                    continue;
+                case "3":
                     WriterImpl.outputBad();
                     check = false;
                     break;
             }
         }
+//        scanner.close();
 //        do {
 //            String кастыль = reader.inputOp();
 //            if (Objects.equals(кастыль, "e"))break;
