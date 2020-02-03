@@ -1,22 +1,21 @@
 package by.tms.test.action;
 
+import by.tms.test.entity.Calc;
+import by.tms.test.entity.CalcImpl;
+import by.tms.test.entity.History;
 import by.tms.test.service.Auth;
 import by.tms.test.service.Reg;
 import by.tms.test.util.MyReader;
 import by.tms.test.util.ReaderImpl;
 import by.tms.test.util.WriterImpl;
 
-import java.util.Scanner;
-
 public class ConsoleAppImpl {
-
+    MyReader reader = new ReaderImpl();
     public void launch() {
-        MyReader reader = new ReaderImpl();
-        System.out.println("1 for auth, 2 for reg, 3 for exit");
         boolean check = true;
-//        Scanner scanner = new Scanner(System.in);
         while(check){
-            switch (reader.input()/*(int) reader.inputNum()*/){
+            System.out.println("1 for auth, 2 for reg, 3 for exit, 4 to show log");
+            switch (reader.input()){
                 case "1":
                     Auth.auth();
                     continue;
@@ -27,15 +26,16 @@ public class ConsoleAppImpl {
                     WriterImpl.outputBad();
                     check = false;
                     break;
+                case "4":
+                    History.showLogs();
+                    break;
             }
         }
-//        scanner.close();
-//        do {
-//            String кастыль = reader.inputOp();
-//            if (Objects.equals(кастыль, "e"))break;
-//            Calc calculator = new CalcImpl(кастыль, reader.inputNum(), reader.inputNum());
-//            WriterImpl.output(calculator.calc());
-//        } while (true);
-//        History.showLogs();
+    }
+
+    public void summoningDaCalc(){
+        Calc calculator = new CalcImpl(reader.inputOp(), reader.inputNum(),
+                reader.inputNum());
+        WriterImpl.output(calculator.calc());
     }
 }
