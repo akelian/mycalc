@@ -29,13 +29,14 @@ public class Auth {
                     String pass = reader.input();
                     if (pass.equals(user.getPassword())){
                         System.out.println("Hello " + user.getLogin());
-                    }
+                        app.summoningDaCalc();
+                    } else {break;}
                 }else {
                     System.out.println("Auth failed");
                     break;
                 }
             }
-            app.summoningDaCalc();
+
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
